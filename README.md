@@ -2,7 +2,7 @@
 
 An http ajax extension for RiotJS.
 
-Weighs in at **620 bytes** gzipped and minified. It is very basic, but contains support for cross-domain requests back to somewhat older browsers (See [Compatibility](#compatibility)).
+Weighs in at **574 bytes** gzipped and minified. It is very basic, but contains support for cross-domain requests back to somewhat older browsers (See [Compatibility](#compatibility)).
 
 > Fork of [nanoajax](https://github.com/yanatan16/nanoajax) for RiotJS ease
 
@@ -11,6 +11,7 @@ Weighs in at **620 bytes** gzipped and minified. It is very basic, but contains 
 After your riot include
 
 ```html
+<script src="/riot.min.js"></script>
 <script src="/riot-http.min.js"></script>
 ```
 
@@ -37,7 +38,7 @@ riot.http({url: '/some-post-url', method: 'POST', body: 'post=content&args=yakno
 ## Documentation
 
 ```
-var xhrRequest = riot.http(params, callback)
+riot.http(params, callback)
 ```
 
 Simple and small ajax decorator function for RiotJS. Takes a parameters object and a callback function.
