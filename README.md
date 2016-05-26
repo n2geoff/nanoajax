@@ -1,54 +1,33 @@
-nanoajax
-========
+# Riot HTTP
 
-An ajax library you need a microscope to see.
+An http ajax extension for RiotJS.
 
 Weighs in at **620 bytes** gzipped and minified. It is very basic, but contains support for cross-domain requests back to somewhat older browsers (See [Compatibility](#compatibility)).
 
-## API Changes
-
-- Passing a string url instead of a params object has been removed in `v0.4.0`
-- The params object was introduced in `v0.2.1`, and is the only way to use `POST` requests.
-- Passing a FormData object as the body will cause the Content Type header to not be set, as appropriate.
+> Fork of [nanoajax](https://github.com/yanatan16/nanoajax) for RiotJS ease
 
 ## Install
 
-You can use npm or bower:
-
-```
-npm install --save nanoajax
-```
-
-```
-bower install --save nanoajax
-```
-
-Can be used via browserify or webpack:
-
-```javascript
-var nanoajax = require('nanoajax')
-```
-
-Or you can use the global script:
+After your riot include
 
 ```html
-<script src="/nanoajax.min.js"></script>
+<script src="/riot-http.min.js"></script>
 ```
 
-(You can build that script with: `npm install -g uglify-js && ./make`)
+> build from source with: `npm run build`
 
 ## Use
 
 GET
 
 ```javascript
-nanoajax.ajax({url:'/some-get-url'}, function (code, responseText) { ... })
+riot.http({url:'/some-get-url'}, function (code, responseText) { ... })
 ```
 
 POST
 
 ```javascript
-nanoajax.ajax({url: '/some-post-url', method: 'POST', body: 'post=content&args=yaknow'}, function (code, responseText, request) {
+riot.http({url: '/some-post-url', method: 'POST', body: 'post=content&args=yaknow'}, function (code, responseText, request) {
     # code is response code
     # responseText is response body as a string
     # request is the xmlhttprequest, which has `getResponseHeader(header)` function
@@ -58,10 +37,10 @@ nanoajax.ajax({url: '/some-post-url', method: 'POST', body: 'post=content&args=y
 ## Documentation
 
 ```
-var xhrRequest = nanoajax.ajax(params, callback)
+var xhrRequest = riot.http(params, callback)
 ```
 
-Simple and small ajax function. Takes a parameters object and a callback function.
+Simple and small ajax decorator function for RiotJS. Takes a parameters object and a callback function.
 
 Parameters:
 
@@ -98,11 +77,13 @@ Returns the request object. So you can call .abort() or other methods
 
 ## Compatibility
 
-`nanoajax` works on android, iOS, IE8+, and all modern browsers, with some (_known_) caveats.
+`riot.http` works on android, iOS, IE8+, and all modern browsers, with some (_known_) caveats.
 
 - Safari is conservative with cookies and will not allow cross-domain cookies to be set from domains that have never been visited by the user.
 - IE8 and IE9 do not support cookies in cross-domain requests in this library. There are other solutions out there, but this library has chosen small over edge case compatibility.
 
+##
+
 ## License
 
-MIT found in `LICENSE` file.
+[MIT](LICENSE)

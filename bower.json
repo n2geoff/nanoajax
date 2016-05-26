@@ -1,15 +1,16 @@
 {
-  "name": "nanoajax",
-  "main": "nanoajax.min.js",
-  "version": "0.4.1",
-  "homepage": "https://github.com/yanatan16/nanoajax",
+  "name": "riot-http",
+  "main": "riot-http.min.js",
+  "version": "0.5.0",
+  "homepage": "https://github.com/n2geoff/riot-http.git",
   "authors": [
     "Jon Eisen <jon@joneisen.me>"
   ],
-  "description": "An ajax library you need a microscope to see.",
+  "description": "small ajax decorator function for RiotJS",
   "keywords": [
     "ajax",
-    "nano",
+    "riot",
+    "riot-http",
     "javascript",
     "cross-browser"
   ],
